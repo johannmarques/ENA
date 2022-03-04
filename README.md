@@ -27,7 +27,7 @@ for (kk in pear_pkg){
   source(file = paste0('/pear_1.2/', kk))
 }
 
-source(file = paste0('/v2/subrotinas.R')) #Rodando scripts para algumas funções
+source(file = '/v2/subrotinas.R') #Rodando scripts para algumas funções
 
 ###########################################
 
@@ -53,7 +53,7 @@ my_theme <- theme_minimal() +
   theme(panel.grid = element_blank(),
         panel.border = element_rect(fill = NA)) #Tema para gráficos
 
-main_data <- read_csv(paste0(path,'/Bases/main_data.csv')) #Carregando base de
+main_data <- read_csv('/Bases/main_data.csv') #Carregando base de
 #dados
 
 start_vec <- c(1931, 1) #Início da série original
@@ -173,7 +173,7 @@ bic_order$l2 %>%
 | ln(*z*<sub>*t* − 10</sub>) |     |     |     |     |     |     |     |     |     |     |     |     |
 | ln(*z*<sub>*t* − 11</sub>) |     |     | ☑   |     |     |     | ☑   |     |     |     |     |     |
 | ln(*z*<sub>*t* − 12</sub>) |     |     |     |     |     |     |     |     |     |     |     |     |
-| ln(*z*<sub>*t* − 13</sub>) |     |     |     |     | ☑   |     |     |     |     |     |     |     |
+| ln(*z*<sub>*t* − 13</sub>) |     |     |     |     | ☑   |     |     | ☑   |     |     |     |     |
 | ln(*z*<sub>*t* − 14</sub>) | ☑   |     |     |     | ☑   |     | ☑   |     |     |     |     |     |
 
 Defasagens escolhidas pela enumeração exaustiva avaliada pelo BIC
@@ -222,21 +222,21 @@ round(betas_bic, 2) %>% as.matrix() %>%
 
 |                            | Jan                     | Fev                     | Mar                     | Abr                     | Mai                      | Jun                     | Jul                      | Ago                     | Set                     | Out                     | Nov                     | Dez                     |
 |:---------------------------|:------------------------|:------------------------|:------------------------|:------------------------|:-------------------------|:------------------------|:-------------------------|:------------------------|:------------------------|:------------------------|:------------------------|:------------------------|
-| Intercepto                 | 1,34<sup>\*</sup>       | 3,02<sup>\* \* \*</sup> | 1,99<sup>\* \* \*</sup> | 0,3                     | 1,35<sup>\*</sup>        | 0,6                     | 0,71<sup>\*</sup>        | 0,61<sup>\*</sup>       | -0,42                   | 0,83                    | 2,84<sup>\* \* \*</sup> | 1,36<sup>\*</sup>       |
-| ln(*z*<sub>*t* − 1</sub>)  | 0,65<sup>\* \* \*</sup> | 0,61<sup>\* \* \*</sup> | 0,59<sup>\* \* \*</sup> | 0,7<sup>\* \* \*</sup>  | 0,42<sup>\* \* \*</sup>  | 0,91<sup>\* \* \*</sup> | 0,67<sup>\* \* \*</sup>  | 0,62<sup>\* \* \*</sup> | 1,06<sup>\* \* \*</sup> | 0,53<sup>\* \* \*</sup> | 0,63<sup>\* \* \*</sup> | 0,55<sup>\* \* \*</sup> |
+| Intercepto                 | 1,72<sup>\*</sup>       | 4,23<sup>\* \* \*</sup> | 2,75<sup>\* \* \*</sup> | 0,38                    | 1,83<sup>\*</sup>        | 0,79                    | 1,03<sup>\*</sup>        | 0,54                    | -0,59                   | 1,13                    | 3,81<sup>\* \* \*</sup> | 1,69                    |
+| ln(*z*<sub>*t* − 1</sub>)  | 0,66<sup>\* \* \*</sup> | 0,61<sup>\* \* \*</sup> | 0,59<sup>\* \* \*</sup> | 0,68<sup>\* \* \*</sup> | 0,41<sup>\* \* \*</sup>  | 0,91<sup>\* \* \*</sup> | 0,66<sup>\* \* \*</sup>  | 0,6<sup>\* \* \*</sup>  | 1,06<sup>\* \* \*</sup> | 0,53<sup>\* \* \*</sup> | 0,63<sup>\* \* \*</sup> | 0,56<sup>\* \* \*</sup> |
 | ln(*z*<sub>*t* − 2</sub>)  |                         |                         |                         |                         |                          |                         |                          |                         |                         |                         |                         |                         |
-| ln(*z*<sub>*t* − 3</sub>)  |                         |                         |                         |                         | 0,23<sup>\* \* \*</sup>  |                         | 0,27<sup>\* \* \*</sup>  | 0,27<sup>\* \* \*</sup> |                         |                         |                         |                         |
-| ln(*z*<sub>*t* − 4</sub>)  |                         |                         |                         |                         |                          |                         |                          |                         |                         |                         |                         | 0,31<sup>\* \* \*</sup> |
+| ln(*z*<sub>*t* − 3</sub>)  |                         |                         |                         |                         | 0,23<sup>\* \* \*</sup>  |                         | 0,26<sup>\* \* \*</sup>  | 0,24<sup>\* \* \*</sup> |                         |                         |                         |                         |
+| ln(*z*<sub>*t* − 4</sub>)  |                         |                         |                         |                         |                          |                         |                          |                         |                         |                         |                         | 0,32<sup>\* \* \*</sup> |
 | ln(*z*<sub>*t* − 5</sub>)  |                         |                         |                         |                         |                          |                         |                          |                         |                         |                         |                         |                         |
-| ln(*z*<sub>*t* − 6</sub>)  |                         |                         |                         |                         |                          |                         |                          |                         |                         | 0,35<sup>\* \* \*</sup> |                         |                         |
+| ln(*z*<sub>*t* − 6</sub>)  |                         |                         |                         |                         |                          |                         |                          |                         |                         | 0,34<sup>\* \* \*</sup> |                         |                         |
 | ln(*z*<sub>*t* − 7</sub>)  |                         |                         |                         |                         |                          |                         |                          |                         |                         |                         |                         |                         |
-| ln(*z*<sub>*t* − 8</sub>)  |                         |                         |                         | 0,27<sup>\* \* \*</sup> |                          |                         |                          |                         |                         |                         |                         |                         |
+| ln(*z*<sub>*t* − 8</sub>)  |                         |                         |                         | 0,28<sup>\* \* \*</sup> |                          |                         |                          |                         |                         |                         |                         |                         |
 | ln(*z*<sub>*t* − 9</sub>)  |                         |                         |                         |                         | 0,21<sup>\*</sup>        |                         |                          |                         |                         |                         |                         |                         |
 | ln(*z*<sub>*t* − 10</sub>) |                         |                         |                         |                         |                          |                         |                          |                         |                         |                         |                         |                         |
-| ln(*z*<sub>*t* − 11</sub>) |                         |                         | 0,16<sup>\*</sup>       |                         |                          |                         | 0,18<sup>\*\*</sup>      |                         |                         |                         |                         |                         |
+| ln(*z*<sub>*t* − 11</sub>) |                         |                         | 0,16<sup>\*</sup>       |                         |                          |                         | 0,19<sup>\*\*</sup>      |                         |                         |                         |                         |                         |
 | ln(*z*<sub>*t* − 12</sub>) |                         |                         |                         |                         |                          |                         |                          |                         |                         |                         |                         |                         |
-| ln(*z*<sub>*t* − 13</sub>) |                         |                         |                         |                         | 0,33<sup>\*\*</sup>      |                         |                          |                         |                         |                         |                         |                         |
-| ln(*z*<sub>*t* − 14</sub>) | 0,2<sup>\* \* \*</sup>  |                         |                         |                         | -0,38<sup>\* \* \*</sup> |                         | -0,23<sup>\* \* \*</sup> |                         |                         |                         |                         |                         |
+| ln(*z*<sub>*t* − 13</sub>) |                         |                         |                         |                         | 0,32<sup>\*\*</sup>      |                         |                          | 0,08                    |                         |                         |                         |                         |
+| ln(*z*<sub>*t* − 14</sub>) | 0,21<sup>\* \* \*</sup> |                         |                         |                         | -0,36<sup>\* \* \*</sup> |                         | -0,23<sup>\* \* \*</sup> |                         |                         |                         |                         |                         |
 
 Saída do modelo estimado com BIC - Estimativas
 
@@ -307,7 +307,7 @@ lambda <- lambda_best2(y = as.numeric(lnY)[-c(1:max.p, test)],
                       X = as.matrix(X)[-c(1:max.p, test),], valid.size = 48,
                       start = start_vec[2], max.p = max.p,
                       lambdas = lambdas) # Escolhendo o lambda
-lambda$lambda <- 0.00078
+
 time.lasso <- system.time(model_lasso <- glmnet::glmnet(x = as.matrix(X)[-c(1:max.p, test),],
                               y = as.numeric(lnY)[-c(1:max.p, test)],
                               alpha = 1, lambda = lambda$lambda,
@@ -333,25 +333,25 @@ ifelse(model_lasso$beta == 0,
                          round(lambda$lambda, 5),"$\\label{tab:modellasso}"))
 ```
 
-|                            | Jan   | Fev   | Mar   | Abr   | Mai   | Jun   | Jul   | Ago   | Set   | Out   | Nov   | Dez   |
-|:---------------------------|:------|:------|:------|:------|:------|:------|:------|:------|:------|:------|:------|:------|
-| Intercepto                 | 1,051 | 1,166 | 1,134 | 0,788 | 0,808 | 0,47  | 0,357 | 0,368 |       | 0,581 | 0,813 | 0,78  |
-| ln(*z*<sub>*t* − 1</sub>)  | 0,881 | 0,851 | 0,849 | 0,88  | 0,873 | 0,926 | 0,938 | 0,935 | 0,998 | 0,932 | 0,905 | 0,895 |
-| ln(*z*<sub>*t* − 2</sub>)  | 0,000 | 0,000 | 0,000 | 0,000 | 0,000 | 0,000 | 0,000 | 0,000 | 0,000 | 0,000 | 0,000 | 0,028 |
-| ln(*z*<sub>*t* − 3</sub>)  |       | 0,000 | 0,000 | 0,000 | 0,000 |       | 0,000 | 0,000 |       | 0,000 | 0,000 | 0,000 |
-| ln(*z*<sub>*t* − 4</sub>)  | 0,000 |       | 0,000 | 0,000 | 0,000 |       | 0,000 |       |       | 0,000 | 0,000 | 0,000 |
-| ln(*z*<sub>*t* − 5</sub>)  | 0,000 |       | 0,000 |       | 0,000 | 0,000 | 0,000 |       |       |       | 0,000 |       |
-| ln(*z*<sub>*t* − 6</sub>)  | 0,000 | 0,000 |       |       |       | 0,000 |       |       |       | 0,000 |       |       |
-| ln(*z*<sub>*t* − 7</sub>)  |       | 0,000 |       | 0,000 |       | 0,000 |       | 0,000 |       |       |       |       |
-| ln(*z*<sub>*t* − 8</sub>)  | 0,000 | 0,000 |       |       |       |       |       |       |       | 0,000 | 0,000 |       |
-| ln(*z*<sub>*t* − 9</sub>)  |       | 0,000 |       |       |       |       |       |       |       |       | 0,000 |       |
-| ln(*z*<sub>*t* − 10</sub>) | 0,000 |       |       |       |       |       |       |       | 0,000 |       | 0,000 |       |
-| ln(*z*<sub>*t* − 11</sub>) |       | 0,000 | 0,000 |       |       |       |       |       | 0,000 |       |       |       |
-| ln(*z*<sub>*t* − 12</sub>) |       |       |       |       |       |       |       |       | 0,000 |       |       |       |
-| ln(*z*<sub>*t* − 13</sub>) | 0,000 | 0,000 |       |       |       |       |       |       |       |       |       |       |
-| ln(*z*<sub>*t* − 14</sub>) | 0,000 |       |       |       |       |       |       | 0,000 |       |       |       |       |
+|                            | Jan   | Fev    | Mar    | Abr   | Mai   | Jun   | Jul    | Ago   | Set   | Out    | Nov   | Dez    |
+|:---------------------------|:------|:-------|:-------|:------|:------|:------|:-------|:------|:------|:-------|:------|:-------|
+| Intercepto                 | 1,862 | 2,575  | 2,157  | 1,37  | 1,687 | 1,043 | 0,951  | 0,894 | 0,106 | 1,006  | 1,45  | 1,56   |
+| ln(*z*<sub>*t* − 1</sub>)  | 0,817 | 0,773  | 0,766  | 0,812 | 0,791 | 0,878 | 0,893  | 0,876 | 0,986 | 0,874  | 0,836 | 0,829  |
+| ln(*z*<sub>*t* − 2</sub>)  | 0,000 | 0,000  | 0,016  | 0,000 | 0,000 | 0,000 | 0,000  | 0,000 | 0,000 | 0,000  | 0,000 | 0,051  |
+| ln(*z*<sub>*t* − 3</sub>)  |       | 0,007  | 0,000  | 0,008 | 0,000 |       | 0,000  | 0,000 |       | 0,000  | 0,02  | 0,000  |
+| ln(*z*<sub>*t* − 4</sub>)  |       | -0,005 | 0,005  | 0,009 | 0,000 |       | 0,016  |       |       | 0,057  | 0,000 | 0,000  |
+| ln(*z*<sub>*t* − 5</sub>)  | 0,014 | -0,014 | 0,013  |       | 0,000 | 0,003 | 0,003  | 0,007 |       | 0,000  | 0,018 |        |
+| ln(*z*<sub>*t* − 6</sub>)  | 0,004 |        | -0,006 |       | 0,018 | 0,001 |        |       |       | 0,000  |       | 0,007  |
+| ln(*z*<sub>*t* − 7</sub>)  |       |        |        | 0,019 | 0,000 | 0,000 |        | 0,005 |       | 0,000  |       |        |
+| ln(*z*<sub>*t* − 8</sub>)  | 0,000 |        |        |       |       |       |        |       |       | 0,000  |       | 0,000  |
+| ln(*z*<sub>*t* − 9</sub>)  | 0,000 |        |        |       |       |       |        |       |       |        | 0,000 | -0,001 |
+| ln(*z*<sub>*t* − 10</sub>) | 0,016 |        |        |       |       |       |        |       | 0,000 |        | 0,000 | 0,000  |
+| ln(*z*<sub>*t* − 11</sub>) |       |        |        |       |       |       |        | 0,000 | 0,000 |        |       |        |
+| ln(*z*<sub>*t* − 12</sub>) |       |        |        |       |       |       |        |       | 0,000 |        | 0,000 |        |
+| ln(*z*<sub>*t* − 13</sub>) | 0,000 | 0,000  |        |       | 0,000 |       |        | 0,000 |       | -0,019 |       |        |
+| ln(*z*<sub>*t* − 14</sub>) | 0,000 |        |        |       |       |       | -0,026 | 0,000 |       | 0,000  |       |        |
 
-Saída do LASSO para *λ* = 0.00078
+Saída do LASSO para *λ* = 0.00086
 
 A trajetória dos coeficientes em função de *λ*
 
@@ -397,17 +397,17 @@ ljung_box_plot(ljung_box_lasso) + scale_x_continuous(breaks = 1:freq, labels = m
 
 ## Comparação do tempo para execução
 
-Seleção com o BIC: 0.113
+Seleção com o BIC: 0.118
 
-Estimação com o BIC: 0.07
+Estimação com o BIC: 0.071
 
-Somados: 0.183
+Somados: 0.189
 
-Estimação e seleção com o LASSO: 0.019
+Estimação e seleção com o LASSO: 0.028
 
 O tempo de execução para seleção e estimação com BIC neste experimento
-foi 9.6315789 vezes superior ao do LASSO. Naturalmente, este tempo tende
-a variar de máquina para máquina.
+foi 6.75 vezes superior ao do LASSO. Naturalmente, este tempo tende a
+variar de máquina para máquina.
 
 ## Previsão
 
